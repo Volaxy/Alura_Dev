@@ -1,33 +1,195 @@
-/*============================== Imports ==================================== */
+/*============================== IMPORTS ==================================== */
 /* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono&display=swap');
+/*
+    [
+        {
+            Name: "Inter",
+            Weights: [
+                400: "Regular",
+                700: "Bold"
+            ]
+        },
 
-/*============================== Configurations ==============================*/
+        {
+            Name: "Roboto Mono",
+            Weights: [
+                400: "Regular"
+            ]
+        }
+    ]
+*/
+
+/*============================== CONFIGURATIONS ==============================*/
 :root {
     /*=============== COLORS ===============*/
-
+    --cod-gray-color: hsl(0, 0%, 8%);
+    --black-24-color: hsla(0, 0%, 0%, 0.24);
+    --white-color: hsl(0, 0%, 100%);
+    --deep-cove-color: hsl(213, 84%, 13%);
+    --malibu-light-color: hsl(220, 96%, 79%);
+    --malibu-moderate-color: hsl(221, 96%, 74%);
+    --dodge-blue-color: hsl(223, 96%, 65%);
+    --dodge-blue-08-color: hsla(223, 96%, 65%, 0.08);
+    --dodge-blue-16-color: hsla(223, 96%, 65%, 0.16);
+    --dodge-blue-24-color: hsla(223, 96%, 65%, 0.24);
 
     /*=============== BACKGROUNDS ===============*/
-
-
+    --page-background-color: var(--deep-cove-color);
+    
+    --code-external-block-background-color: var(--malibu-moderate-color);
+    --code-internal-block-background-color: var(--cod-gray-color);
+    --code-primary-button-background-color: var(--dodge-blue-08-color);
+    --code-primary-button-background-color--hover: var(--dodge-blue-16-color);
+    --code-primary-button-background-color--focus: var(--dodge-blue-16-color);
+    
     /*=============== BORDERS ===============*/
-
+    --code-primary-button-border-color--active: var(--dodge-blue-24-color);
+    
+    /*=============== BOX-SHADOWS ===============*/
+    --code-box-shadow-color: var(--black-24-color);
 
     /*=============== TEXT COLORS ===============*/
-
+    --white-text-color: var(--white-color);
 
     /*=============== FONTS ===============*/
-
+    --inter-font: "Inter", "Arial", "Helvetica", sans-serif;
+    --roboto-mono-font: "Roboto Mono", "Courier New", Courier, monospace;
 }
 
 /*============================== GENERIC ELEMENTS ==============================*/
+html,
 body {
-    /* background-color: #051D3B; */
+    font-family: var(--inter-font);
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--page-background-color);
+
+    padding: 1rem;
+}
+
+fieldset {
+    padding: 0;
 }
 
 /*============================== GENERIC CLASSES ==============================*/
+/*=============== BLOCKS ===============*/
+.box {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
 
+/*=============== ACCESSIBILITY ===============*/
+.button {
+    background-color: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    cursor: pointer;
+    line-height: 1.5rem;
+}
+
+/*=============== ACCESSIBILITY ===============*/
+.accessibility--hidden-text {
+    width: 1px;
+    height: 1px;
+
+    position: absolute;
+
+    color: transparent;
+
+    overflow: hidden;
+}
 
 /*============================== PAGE - TOP TO BOTTOM ==============================*/
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
 
+    .header__glass {
+        margin-left: auto;
+    }
+
+/* CODE */
+.code {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+    .code__external__block {
+        background-color: var(--code-external-block-background-color);
+
+        display: block;
+
+        border-radius: 0.5rem;
+        padding: 2rem;
+    }
+
+        .code__internal__block {
+            background-color: var(--code-internal-block-background-color);
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+            
+            border-radius: 0.5rem;
+            box-shadow: 0 1rem 1.5rem 0 var(--code-box-shadow-color);
+            padding: 1rem;
+        }
+
+            .code__text {
+                background: none;
+
+                width: 100%;
+
+                display: block;
+
+                border: 0;
+                padding: 0;
+
+                color: white;
+                font-family: var(--roboto-mono-font);
+
+                resize: none;
+                /* TODO: Make the Scroll Style */
+            }
+
+                .code__text:focus {
+                    outline: none;
+                }
+
+    .code__highlight {
+        background-color: var(--code-primary-button-background-color);
+
+        color: var(--white-text-color);
+
+        transition: 0.2s background-color;
+    }
+
+        .code__highlight:hover {
+            background-color: var(--code-primary-button-background-color--hover);
+        }
+        
+        .code__highlight:active {
+            outline: 0.25rem solid var(--code-primary-button-border-color--active);
+        }
+        
+        .code__highlight:focus {
+            background-color: var(--code-primary-button-background-color--focus);
+        }
 
 /*=============== RESPONSIVE LAYOUTS ===============*/

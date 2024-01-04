@@ -13,29 +13,32 @@
 </head>
 <body>
     <!-- HEADER -->
-    <header>
+    <header class="header">
         <img src="assets/images/logo.png" alt="Logo do AluraDev">
-        <img src="assets/images/icons/search.svg" alt="Search icon">
+        <img class="header__glass" src="assets/images/icons/search.svg" alt="Search icon">
         <img src="assets/images/icons/menu.svg" alt="Menu icon">
     </header>
 
     <main>
         <form>
-            <fieldset>
+            <fieldset class="box">
                 <!-- CODE -->
-                <legend>Código</legend>
-                <section>
-                    <code>
-                        <textarea cols="30" rows="10"></textarea>
+                <legend class="accessibility--hidden-text">Código</legend>
+                <section class="code">
+                    <code class="code__external__block">
+                        <div class="code__internal__block">
+                            <img src="assets/images/mac-buttons.svg" alt="Mac Buttons">
+                            <textarea class="code__text" cols="30" rows="15"></textarea>
+                        </div>
                     </code>
 
-                    <button>Visualizar com o highlight</button>
+                    <button class="button code__highlight">Visualizar com o highlight</button>
                 </section>
             </fieldset>
             
-            <fieldset>
+            <fieldset class="box">
                 <!-- YOUR PROJECT -->
-                <legend>Informações do Projeto</legend>
+                <legend class="accessibility--hidden-text">Informações do Projeto</legend>
                 <section>
                     <h2>Seu Projeto</h2>
 
@@ -44,11 +47,17 @@
                 </section>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="box">
                 <!-- CUSTOMIZATION -->
-                <legend>Customização</legend>
+                <legend class="accessibility--hidden-text">Customização</legend>
                 <section>
-                
+                    <select>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JavaScript">JavaScript</option>
+                    </select>
+
+                    <input type="color">
                 </section>
             </fieldset>
 
