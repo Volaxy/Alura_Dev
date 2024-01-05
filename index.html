@@ -32,36 +32,42 @@
                         </div>
                     </code>
 
-                    <button class="button code__highlight">Visualizar com o highlight</button>
+                    <button class="button primary-button">Visualizar com o highlight</button>
                 </section>
             </fieldset>
             
             <fieldset class="box">
                 <!-- YOUR PROJECT -->
                 <legend class="accessibility--hidden-text">Informações do Projeto</legend>
-                <section>
+                <section class="project-info">
                     <h2>Seu Projeto</h2>
 
-                    <input type="text" placeholder="Nome do seu Projeto">
-                    <input type="text" placeholder="Descrição do seu Projeto">
+                    <label class="accessibility--hidden-text" for="project-name">Nome do seu projeto</label>
+                    <input class="input-text" id="project-name" type="text" placeholder="Nome do seu Projeto">
+                    <label class="accessibility--hidden-text" for="project-description">Descrição do seu projeto</label>
+                    <textarea class="input-text project-info__description" id="project-description" rows="5" placeholder="Descrição do seu Projeto"></textarea>
                 </section>
             </fieldset>
 
             <fieldset class="box">
                 <!-- CUSTOMIZATION -->
                 <legend class="accessibility--hidden-text">Customização</legend>
-                <section>
-                    <select>
+                <section class="customization">
+                    <h2>Personalização</h2>
+
+                    <label class="accessibility--hidden-text" for="project-language">Linguagem do projeto</label>
+                    <select class="input-select" id="project-language">
                         <option value="HTML">HTML</option>
                         <option value="CSS">CSS</option>
                         <option value="JavaScript">JavaScript</option>
                     </select>
 
-                    <input type="color">
+                    <label class="accessibility--hidden-text" for="project-color">Cor do projeto</label>
+                    <input class="customization__color" type="color" value="#6BD1FF">
                 </section>
             </fieldset>
 
-            <input type="submit" value="Salvar Projeto">
+            <input class="button secondary-button" type="submit" value="Salvar Projeto">
         </form>
     </main>
 </body>
