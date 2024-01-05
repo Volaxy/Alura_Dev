@@ -231,10 +231,15 @@ fieldset {
     height: 1px;
 
     position: absolute;
-
+    
     color: transparent;
-
+    
     overflow: hidden;
+}
+
+/*=============== ACCESSIBILITY ===============*/
+.clickable {
+    cursor: pointer;
 }
 
 /*============================== PAGE - TOP TO BOTTOM ==============================*/
@@ -337,3 +342,42 @@ fieldset {
     }
 
 /*=============== RESPONSIVE LAYOUTS ===============*/
+/* TABLET - 768px */
+@media screen and (min-width: 48rem) {
+    /*============================== GENERIC ELEMENTS ==============================*/
+    html,
+    body {
+        font-size: 18px;
+    }
+
+    /*============================== GENERIC CLASSES ==============================*/
+    .mobile {
+        display: none;
+    }
+
+    .tablet {
+        display: initial;
+    }
+    
+    /*============================== PAGE - TOP TO BOTTOM ==============================*/
+    /* HEADER */
+    .header {
+        gap: 2.25rem;
+    }
+
+        .header__search {
+            flex-grow: 2;
+        }
+
+    /* CUSTOMIZATION */
+    .customization {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+        .customization__title {
+            grid-column: 1 / -1;
+        }
+}
+
+

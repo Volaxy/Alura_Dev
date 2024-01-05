@@ -15,8 +15,11 @@
     <!-- HEADER -->
     <header class="header">
         <img src="assets/images/logo.png" alt="Logo do AluraDev">
-        <img class="header__glass" src="assets/images/icons/search.svg" alt="Search icon">
-        <img src="assets/images/icons/menu.svg" alt="Menu icon">
+        <img class="mobile header__glass clickable" src="assets/images/icons/search.svg" alt="Search icon">
+        
+        <label class="accessibility--hidden-text" for="header__search"></label>
+        <input class="input-text header__search" id="header__search" type="text" placeholder="Busque por algo">
+        <img class="clickable" src="assets/images/icons/menu.svg" alt="Menu icon">
     </header>
 
     <main>
@@ -53,7 +56,7 @@
                 <!-- CUSTOMIZATION -->
                 <legend class="accessibility--hidden-text">Customização</legend>
                 <section class="customization">
-                    <h2>Personalização</h2>
+                    <h2 class="customization__title">Personalização</h2>
 
                     <label class="accessibility--hidden-text" for="project-language">Linguagem do projeto</label>
                     <select class="input-select" id="project-language">

@@ -9,6 +9,6 @@ Projeto web para edição e compartilhamento de código no site, com sintaxe *Hi
 <hr>
 
 ## Tecnologias Usadas
-* [NAME_OF_THE_TOOL](URL_TO_DOWNLOAD_THE_TOOL) - DESCRIPTION
-
-## Como Executar
+![HTML5 Logo](assets/readme/html-5.svg)
+![CSS3 Logo](assets/readme/css-3.svg)
+![JavaScript Logo](assets/readme/javascript.svg)
