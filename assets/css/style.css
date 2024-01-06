@@ -29,6 +29,7 @@
     --black-24-color: hsla(0, 0%, 0%, 0.24);
     --silver-color: hsl(0, 0%, 80%);
     --white-color: hsl(0, 0%, 100%);
+    --white-50-color: hsla(0, 0%, 100%, 0.5);
     --rhino-color: hsl(213, 33%, 26%);
     --deep-cove-color: hsl(213, 84%, 13%);
     --fiord-color: hsl(214, 24%, 34%);
@@ -76,6 +77,7 @@
     /*=============== TEXT COLORS ===============*/
     /*======= GENERAL =======*/
     --white-text-color: var(--white-color);
+    --white-50-text-color: var(--white-50-color);
     --black-text-color: var(--black-color);
     /*======= INPUTS =======*/
     --input-text-placeholder-text-color: var(--silver-color);
@@ -98,6 +100,9 @@ body {
     background-color: var(--page-background-color);
 
     padding: 2rem 1rem;
+    box-sizing: border-box;
+
+    line-height: 1.5rem;
 }
 
 h2 {
@@ -109,11 +114,27 @@ h2 {
     line-height: 1.125rem;
 }
 
+input,
+textarea {
+    width: 100%;
+    
+    box-sizing: border-box;
+}
+
 fieldset {
     padding: 0;
 }
 
 /*============================== GENERIC CLASSES ==============================*/
+.tablet,
+.desktop {
+    display: none;
+}
+
+.mobile {
+    display: initial;
+}
+
 /*=============== BLOCKS ===============*/
 .box {
     margin-top: 2.5rem;
@@ -297,6 +318,7 @@ fieldset {
                 color: white;
                 font-family: var(--roboto-mono-font);
 
+                line-height: 1.5rem;
                 resize: none;
                 /* TODO: Make the Scroll Style */
             }
@@ -327,7 +349,7 @@ fieldset {
         background-color: transparent;
 
         width: 100%;
-        height: 55px;
+        height: 4rem;
 
         border: 1px solid var(--customization-color-border-color);
         border-radius: 0.5rem;
@@ -351,6 +373,7 @@ fieldset {
     }
 
     /*============================== GENERIC CLASSES ==============================*/
+    /* RESPONSIBLE */
     .mobile {
         display: none;
     }
@@ -378,6 +401,117 @@ fieldset {
         .customization__title {
             grid-column: 1 / -1;
         }
+
+        .customization__color {
+            height: auto;
+        }
 }
 
+/* DESKTOP - 1024px */
+@media screen and (min-width: 64rem) {
+    /*============================== GENERIC ELEMENTS ==============================*/
+    html,
+    body {
+        font-size: 20px;
+    }
 
+    /*============================== GENERIC CLASSES ==============================*/
+    /* RESPONSIBLE */
+    .tablet {
+        display: none;
+    }
+
+    .desktop {
+        display: initial;
+    }
+    
+    /*============================== PAGE - TOP TO BOTTOM ==============================*/
+    .entire-page {
+        display: grid;
+        grid-template-columns: 20vw 1fr 20vw;
+        gap: 2.5rem;
+    }
+
+    /* HEADER */
+    .header {
+        grid-column: 1 / -1;
+
+        display: grid;
+        grid-template-columns: 20vw 1fr 20vw;
+        gap: 0;
+    }
+
+        .header__profile {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            margin-left: auto;
+
+            color: var(--white-text-color);
+        }
+
+    .main {
+        grid-column: 1 / -1;
+    }
+
+    /* MENU */
+    .menu {
+        margin-right: 2.5rem;
+    }
+
+        .menu__title {
+            margin-bottom: 1rem;
+        }
+
+            .menu__links {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+                .menu__links__item {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                    color: var(--white-50-text-color);
+
+                    cursor: pointer;
+                }
+
+    .main {
+        display: grid;
+        grid-template-columns: 20vw 1fr;
+    }
+
+    /* CODE */
+    .code-form {
+        display: grid;
+        grid-template-columns: 1fr 20vw;
+    }
+
+        .code-form__code {
+            margin: 0;
+        }
+
+    /* YOUR PROJECT */
+    .code-form__project {
+        margin-left: 2.5rem;
+    }
+
+        .code-form__project__box {
+            margin: 0;
+        }
+
+    /* CUSTOMIZATION */
+    .customization__language {
+        grid-column: 1 / -1;
+    }
+
+    .customization__color {
+        grid-column: 1 / -1;
+
+        min-height: 3rem;
+    }
+}

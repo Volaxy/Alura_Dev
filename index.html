@@ -12,66 +12,94 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <img src="assets/images/logo.png" alt="Logo do AluraDev">
-        <img class="mobile header__glass clickable" src="assets/images/icons/search.svg" alt="Search icon">
-        
-        <label class="accessibility--hidden-text" for="header__search"></label>
-        <input class="input-text header__search" id="header__search" type="text" placeholder="Busque por algo">
-        <img class="clickable" src="assets/images/icons/menu.svg" alt="Menu icon">
-    </header>
-
-    <main>
-        <form>
-            <fieldset class="box">
-                <!-- CODE -->
-                <legend class="accessibility--hidden-text">Código</legend>
-                <section class="code">
-                    <code class="code__external__block">
-                        <div class="code__internal__block">
-                            <img src="assets/images/mac-buttons.svg" alt="Mac Buttons">
-                            <textarea class="code__text" cols="30" rows="15"></textarea>
-                        </div>
-                    </code>
-
-                    <button class="button primary-button">Visualizar com o highlight</button>
-                </section>
-            </fieldset>
+    <div class="entire-page">
+        <!-- HEADER -->
+        <header class="header">
+            <img src="assets/images/logo.png" alt="Logo do AluraDev">
             
-            <fieldset class="box">
-                <!-- YOUR PROJECT -->
-                <legend class="accessibility--hidden-text">Informações do Projeto</legend>
-                <section class="project-info">
-                    <h2>Seu Projeto</h2>
+            <img class="mobile header__glass clickable" src="assets/images/icons/search.svg" alt="Search icon">
+            
+            <label class="tablet desktop accessibility--hidden-text" for="header__search"></label>
+            <input class="tablet desktop input-text header__search" id="header__search" type="text" placeholder="Busque por algo">
+            
+            <img class="mobile tablet clickable" src="assets/images/icons/menu.svg" alt="Menu icon">
 
-                    <label class="accessibility--hidden-text" for="project-name">Nome do seu projeto</label>
-                    <input class="input-text" id="project-name" type="text" placeholder="Nome do seu Projeto">
-                    <label class="accessibility--hidden-text" for="project-description">Descrição do seu projeto</label>
-                    <textarea class="input-text project-info__description" id="project-description" rows="5" placeholder="Descrição do seu Projeto"></textarea>
-                </section>
-            </fieldset>
+            <div class="desktop header__profile">
+                <img src="assets/images/header-photo.png" alt="Imagem de perfil de uma pessoa">
+                Harry
+            </div>
+        </header>
 
-            <fieldset class="box">
-                <!-- CUSTOMIZATION -->
-                <legend class="accessibility--hidden-text">Customização</legend>
-                <section class="customization">
-                    <h2 class="customization__title">Personalização</h2>
+        <main class="main">
+            <!-- MENU -->
+            <nav class="desktop menu">
+                <h2 class="menu__title">Menu</h2>
 
-                    <label class="accessibility--hidden-text" for="project-language">Linguagem do projeto</label>
-                    <select class="input-select" id="project-language">
-                        <option value="HTML">HTML</option>
-                        <option value="CSS">CSS</option>
-                        <option value="JavaScript">JavaScript</option>
-                    </select>
+                <ul class="menu__links">
+                    <li class="menu__links__item">
+                        <img src="assets/images/icons/icon-code.svg" alt="Ilustração de um fechamento de tag indicando código">
+                        Editor de Código
+                    </li>
+                    <li class="menu__links__item">
+                        <img src="assets/images/icons/icon-users.svg" alt="Ilustração de um grupo de 3 pessoas">
+                        Comunidade
+                    </li>
+                </ul>
+            </nav>
 
-                    <label class="accessibility--hidden-text" for="project-color">Cor do projeto</label>
-                    <input class="customization__color" type="color" value="#6BD1FF">
-                </section>
-            </fieldset>
+            <form class="code-form">
+                <fieldset class="box code-form__code">
+                    <!-- CODE -->
+                    <legend class="accessibility--hidden-text">Código</legend>
+                    <section class="code">
+                        <code class="code__external__block">
+                            <div class="code__internal__block">
+                                <img src="assets/images/mac-buttons.svg" alt="Mac Buttons">
+                                <textarea class="code__text" cols="30" rows="15"></textarea>
+                            </div>
+                        </code>
 
-            <input class="button secondary-button" type="submit" value="Salvar Projeto">
-        </form>
-    </main>
+                        <button class="button primary-button">Visualizar com o highlight</button>
+                    </section>
+                </fieldset>
+        
+                <div class="code-form__project">
+                    <fieldset class="box code-form__project__box">
+                        <!-- YOUR PROJECT -->
+                        <legend class="accessibility--hidden-text">Informações do Projeto</legend>
+                        <section class="project-info">
+                            <h2>Seu Projeto</h2>
+
+                            <label class="accessibility--hidden-text" for="project-name">Nome do seu projeto</label>
+                            <input class="input-text" id="project-name" type="text" placeholder="Nome do seu Projeto">
+                            
+                            <label class="accessibility--hidden-text" for="project-description">Descrição do seu projeto</label>
+                            <textarea class="input-text project-info__description" id="project-description" rows="5" placeholder="Descrição do seu Projeto"></textarea>
+                        </section>
+                    </fieldset>
+
+                    <fieldset class="box">
+                        <!-- CUSTOMIZATION -->
+                        <legend class="accessibility--hidden-text">Customização</legend>
+                        <section class="customization">
+                            <h2 class="customization__title">Personalização</h2>
+                            
+                            <label class="accessibility--hidden-text" for="project-language">Linguagem do projeto</label>
+                            <select class="input-select customization__language" id="project-language">
+                                <option value="HTML">HTML</option>
+                                <option value="CSS">CSS</option>
+                                <option value="JavaScript">JavaScript</option>
+                            </select>
+
+                            <label class="accessibility--hidden-text" for="project-color">Cor do projeto</label>
+                            <input class="customization__color" type="color" value="#6BD1FF">
+                        </section>
+                    </fieldset>
+
+                    <input class="button secondary-button" type="submit" value="Salvar Projeto">
+                </div>
+            </form>
+        </main>
+    </div>
 </body>
 </html>
