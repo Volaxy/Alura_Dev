@@ -16,6 +16,8 @@
     <script src="assets/js/menu.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" defer></script>
     <script src="assets/js/highlight.js" defer></script>
+    <script src="assets/js/window-events.js" defer></script>
+    <script src="assets/js/index.js" defer></script>
     <script defer>
         document.addEventListener("DOMContentLoaded", () => {
             hljs.highlightAll();
@@ -87,12 +89,12 @@
                     <!-- CODE -->
                     <legend class="accessibility--hidden-text">Código</legend>
                     <section class="code">
-                        <div class="code__external-block">
+                        <div class="code__external-block" data-element-id="code-external-block">
                             <div class="code__internal-block">
                                 <img src="assets/images/mac-buttons.svg" alt="Mac Buttons">
                                 
                                 <div class="code__internal-block__wrapper" data-element-id="code__internal-block">
-                                    <code class="code__internal-block__code hljs" contenteditable="true" aria-label="Editor de código" data-element-id="code-edition">function test() {}</code>
+                                    <code class="code__internal-block__code hljs" contenteditable="true" aria-label="Editor de código">function test() {}</code>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +132,7 @@
                             </select>
 
                             <label class="accessibility--hidden-text" for="project-color">Cor do projeto</label>
-                            <input class="customization__color" type="color" value="#6BD1FF">
+                            <input class="customization__color" type="color" value="#7da5fc" data-element-id="customization-color">
                         </section>
                     </fieldset>
 

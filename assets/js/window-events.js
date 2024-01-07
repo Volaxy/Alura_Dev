@@ -18,9 +18,6 @@ window.addEventListener("resize", () => {
         $elementsToHide.forEach($elementToHide => $elementToHide.classList.remove("display-none"));
         $elementsToShow.forEach($elementToShow => $elementToShow.classList.remove("display-initial"));
     }
-
-    // Code Logic
-    setMaxWidthForCodeText();
 });
 
 window.addEventListener("click", event => {
@@ -35,9 +32,3 @@ window.addEventListener("click", event => {
         }
     }
 });
-
-const $codeEdition = document.querySelector("[data-element-id='code-edition']");
-function setMaxWidthForCodeText() {
-    $codeEdition.style.maxWidth = `${$codeEdition.getBoundingClientRect().width}px`;
-}
-setMaxWidthForCodeText();
