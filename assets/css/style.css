@@ -383,7 +383,7 @@ hr {
     gap: 2rem;
 }
 
-    .code__external__block {
+    .code__external-block {
         background-color: var(--code-external-block-background-color);
 
         display: block;
@@ -392,8 +392,10 @@ hr {
         padding: 2rem;
     }
 
-        .code__internal__block {
+        .code__internal-block {
             background-color: var(--code-internal-block-background-color);
+
+            min-height: 10rem;
 
             display: flex;
             flex-direction: column;
@@ -405,27 +407,26 @@ hr {
             padding: 1rem;
         }
 
-            .code__text {
-                background: none;
-
+            .code__internal-block__wrapper {
                 width: 100%;
-
-                display: block;
-
-                border: 0;
-                padding: 0;
-
-                color: white;
-                font-family: var(--roboto-mono-font);
-
-                line-height: 1.5rem;
-                resize: none;
-                /* TODO: Make the Scroll Style */
             }
 
-                .code__text:focus {
-                    outline: none;
+                .code__internal-block__code {
+                    background-color: transparent;
+
+                    padding-left: 0;
+                    padding-right: 0;
+                    box-sizing: border-box;
+
+                    font-family: var(--roboto-mono-font);
+
+                    line-height: 1.5rem;
+                    white-space: pre-wrap;
                 }
+
+                    .code__internal-block__code:focus {
+                        outline: none;
+                    }
 
 /* YOUR PROJECT */
 .project-info {

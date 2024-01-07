@@ -7,12 +7,20 @@
     <title>Alura Dev</title>
 
     <!-- CSS IMPORTS -->
+    <link rel="stylesheet" href="assets/css/dracula.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- JS IMPORTS -->
     <script src="assets/js/menu.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" defer></script>
+    <script src="assets/js/highlight.js" defer></script>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            hljs.highlightAll();
+        });
+    </script>
 </head>
 <body>
     <div class="entire-page">
@@ -79,14 +87,17 @@
                     <!-- CODE -->
                     <legend class="accessibility--hidden-text">Código</legend>
                     <section class="code">
-                        <code class="code__external__block">
-                            <div class="code__internal__block">
+                        <div class="code__external-block">
+                            <div class="code__internal-block">
                                 <img src="assets/images/mac-buttons.svg" alt="Mac Buttons">
-                                <textarea class="code__text" cols="30" rows="15"></textarea>
+                                
+                                <div class="code__internal-block__wrapper" data-element-id="code__internal-block">
+                                    <code class="code__internal-block__code hljs" contenteditable="true" aria-label="Editor de código" data-element-id="code-edition">function test() {}</code>
+                                </div>
                             </div>
-                        </code>
+                        </div>
 
-                        <button class="button primary-button">Visualizar com o highlight</button>
+                        <button class="button primary-button" data-element-id="show-highlight">Visualizar com o highlight</button>
                     </section>
                 </fieldset>
         
@@ -112,10 +123,10 @@
                             <h2 class="customization__title">Personalização</h2>
                             
                             <label class="accessibility--hidden-text" for="project-language">Linguagem do projeto</label>
-                            <select class="input-select customization__language" id="project-language">
+                            <select class="input-select customization__language" id="project-language" data-element-id="project-language">
                                 <option value="HTML">HTML</option>
                                 <option value="CSS">CSS</option>
-                                <option value="JavaScript">JavaScript</option>
+                                <option value="JavaScript" selected>JavaScript</option>
                             </select>
 
                             <label class="accessibility--hidden-text" for="project-color">Cor do projeto</label>
