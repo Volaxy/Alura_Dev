@@ -27,8 +27,10 @@
     --cod-gray-color: hsl(0, 0%, 8%);
     --black-color: hsl(0, 0%, 0%);
     --black-24-color: hsla(0, 0%, 0%, 0.24);
+    --black-50-color: hsla(0, 0%, 0%, 0.5);
     --silver-color: hsl(0, 0%, 80%);
     --white-color: hsl(0, 0%, 100%);
+    --white-25-color: hsla(0, 0%, 100%, 0.25);
     --white-50-color: hsla(0, 0%, 100%, 0.5);
     --rhino-color: hsl(213, 33%, 26%);
     --deep-cove-color: hsl(213, 84%, 13%);
@@ -45,6 +47,7 @@
     /*=============== BACKGROUNDS ===============*/
     /*======= GENERAL =======*/
     --page-background-color: var(--deep-cove-color);
+    --gray-screen-background-color: var(--black-50-color);
     /*======= BUTTONS =======*/
     --primary-button-background-color: var(--dodge-blue-08-color);
     --primary-button-background-color--hover: var(--dodge-blue-16-color);
@@ -58,12 +61,15 @@
     --input-select-background-color: var(--rhino-color);
     --input-select-background-color--hover: var(--fiord-color);
     /*======= PAGE COMPONENTS =======*/
+    --header-menu-background-color: var(--rhino-color);
     --code-external-block-background-color: var(--malibu-moderate-color);
     --code-internal-block-background-color: var(--cod-gray-color);
     
     
     /*=============== BORDERS ===============*/
-    /* BUTTONS */
+    /*======= GENERAL =======*/
+    --hr-border-color: var(--white-25-color);
+    /*======= BUTTONS =======*/
     --primary-button-border-color--active: var(--dodge-blue-24-color);
     --secondary-button-border-color--active: var(--dodge-blue-72-color);
     /*======= PAGE COMPONENTS =======*/
@@ -125,6 +131,16 @@ fieldset {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+hr {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-color: var(--hr-border-color);
+}
+
 /*============================== GENERIC CLASSES ==============================*/
 .tablet,
 .desktop {
@@ -139,6 +155,25 @@ fieldset {
 .box {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-initial {
+    display: initial;
+}
+
+.gray-screen {
+    background-color: var(--gray-screen-background-color);
+    
+    width: 100vw;
+    height: 100vh;
+    
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
 /*=============== BUTTONS ===============*/
@@ -266,15 +301,80 @@ fieldset {
 /*============================== PAGE - TOP TO BOTTOM ==============================*/
 /* HEADER */
 .header {
+    max-height: 2rem;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
+
+    position: sticky;
+    top: 2rem;
+
+    z-index: 1;
 }
 
-    .header__glass {
+    .header__search-button {
         margin-left: auto;
     }
+
+        .header__search-button--active {
+            order: 1;
+        }
+
+    .header__menu {
+        background-color: var(--header-menu-background-color);
+        
+        width: 12.5rem;
+        height: 70vh;
+        
+        position: fixed;
+        left: 100%;
+        top: 0;
+
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+
+        transition: 0.2s transform;
+        z-index: 1;
+    }
+
+        .header__menu__links,
+        .menu__links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+            .header__menu__links__item,
+            .menu__links__item {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                color: var(--white-50-text-color);
+            }
+            
+                .header__menu__links__item--current,
+                .menu__links__item--current {
+                    color: var(--white-text-color);
+
+                    cursor: default;
+                }
+
+        .header__menu--active {
+            transform: translateX(-105%);
+        }
+        
+            .header__menu__profile {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                margin-left: auto;
+
+                color: var(--white-text-color);
+            }
 
 /* CODE */
 .code {
@@ -450,9 +550,12 @@ fieldset {
 
             color: var(--white-text-color);
         }
-
+    
     .main {
         grid-column: 1 / -1;
+
+        display: grid;
+        grid-template-columns: 20vw 1fr;
     }
 
     /* MENU */
@@ -463,27 +566,6 @@ fieldset {
         .menu__title {
             margin-bottom: 1rem;
         }
-
-            .menu__links {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-                .menu__links__item {
-                    display: flex;
-                    align-items: center;
-                    gap: 1rem;
-
-                    color: var(--white-50-text-color);
-
-                    cursor: pointer;
-                }
-
-    .main {
-        display: grid;
-        grid-template-columns: 20vw 1fr;
-    }
 
     /* CODE */
     .code-form {

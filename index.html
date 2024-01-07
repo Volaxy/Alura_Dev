@@ -10,19 +10,44 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- JS IMPORTS -->
+    <script src="assets/js/menu.js" defer></script>
 </head>
 <body>
     <div class="entire-page">
         <!-- HEADER -->
-        <header class="header">
-            <img src="assets/images/logo.png" alt="Logo do AluraDev">
+        <header class="header" data-element-id="header">
+            <img src="assets/images/logo.png" alt="Logo do AluraDev" data-hidde-on-search>
             
-            <img class="mobile header__glass clickable" src="assets/images/icons/search.svg" alt="Search icon">
+            <img class="mobile header__search-button clickable" src="assets/images/icons/search.svg" alt="Search icon" data-element-id="search-button">
             
-            <label class="tablet desktop accessibility--hidden-text" for="header__search"></label>
-            <input class="tablet desktop input-text header__search" id="header__search" type="text" placeholder="Busque por algo">
+            <label class="tablet desktop accessibility--hidden-text" for="header__search" data-show-on-search>Busque por algo</label>
+            <input class="tablet desktop input-text header__search" id="header__search" type="text" placeholder="Busque por algo" data-show-on-search>
             
-            <img class="mobile tablet clickable" src="assets/images/icons/menu.svg" alt="Menu icon">
+            <img class="mobile tablet clickable header__menu-button" src="assets/images/icons/menu.svg" alt="Menu icon" data-element-id="menu-button" data-hidde-on-search>
+
+            <nav class="header__menu" data-element-id="header-menu">
+                <ul class="header__menu__links">
+                    <li class="header__menu__links__item header__menu__links__item--current">
+                        <img src="assets/images/icons/code.svg" alt="Ilustração de um fechamento de tag indicando código">
+                        Editor de Código
+                    </li>
+                    <li>
+                        <a class="header__menu__links__item" href="#">
+                            <img src="assets/images/icons/users.svg" alt="Ilustração de um grupo de 3 pessoas">
+                            Comunidade
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <div class="header__menu__profile">
+                    <img src="assets/images/header-photo.png" alt="Imagem de perfil de uma pessoa">
+                    Harry
+                </div>
+            </nav>
 
             <div class="desktop header__profile">
                 <img src="assets/images/header-photo.png" alt="Imagem de perfil de uma pessoa">
@@ -36,13 +61,15 @@
                 <h2 class="menu__title">Menu</h2>
 
                 <ul class="menu__links">
-                    <li class="menu__links__item">
-                        <img src="assets/images/icons/icon-code.svg" alt="Ilustração de um fechamento de tag indicando código">
+                    <li class="menu__links__item menu__links__item--current">
+                        <img src="assets/images/icons/code.svg" alt="Ilustração de um fechamento de tag indicando código">
                         Editor de Código
                     </li>
-                    <li class="menu__links__item">
-                        <img src="assets/images/icons/icon-users.svg" alt="Ilustração de um grupo de 3 pessoas">
-                        Comunidade
+                    <li>
+                        <a class="menu__links__item" href="#">
+                            <img src="assets/images/icons/users.svg" alt="Ilustração de um grupo de 3 pessoas">
+                            Comunidade
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -101,5 +128,7 @@
             </form>
         </main>
     </div>
+
+    <div data-element-id="gray-screen"></div>
 </body>
 </html>
