@@ -120,9 +120,10 @@
     }
 
 /*============================== PAGE - TOP TO BOTTOM ==============================*/
+.main {
+    margin-top: 2.5rem;
+}
 
-
-/*=============== RESPONSIVE LAYOUTS ===============*/
 /* CODE */
 .code {
     display: flex;
@@ -193,6 +194,8 @@
 
         display: grid;
         grid-template-columns: 20vw 1fr;
+
+        margin-top: 0;
     }
 
     /* CODE */
@@ -215,13 +218,16 @@
         }
 
     /* CUSTOMIZATION */
-    .customization__language {
-        grid-column: 1 / -1;
+    .customization {
+        margin-top: 2.5rem;
     }
+        .customization__language {
+            grid-column: 1 / -1;
+        }
 
-    .customization__color {
-        grid-column: 1 / -1;
+        .customization__color {
+            grid-column: 1 / -1;
 
-        min-height: 3rem;
-    }
+            min-height: 3rem;
+        }
 }

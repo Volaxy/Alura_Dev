@@ -1,0 +1,129 @@
+@import url("style.css");
+
+/*============================== Imports ==================================== */
+
+/*============================== Configurations ==============================*/
+:root {
+    /*=============== COLORS ===============*/
+
+
+    /*=============== BACKGROUNDS ===============*/
+    --project-background-color: var(--tangaroa-color);
+    --hidden-code-background-color: var(--cod-gray-color);
+
+    /*=============== BORDERS ===============*/
+
+
+    /*=============== TEXT COLORS ===============*/
+
+
+    /*=============== FONTS ===============*/
+
+}
+
+/*============================== GENERIC ELEMENTS ==============================*/
+
+
+/*============================== GENERIC CLASSES ==============================*/
+
+
+/*============================== PAGE - TOP TO BOTTOM ==============================*/
+/* PROJECTS */
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    margin-top: 2.5rem;
+}
+
+    .code__internal-block {
+        position: relative;
+    }
+
+        .code__internal-block__wrapper {
+            min-height: 10rem;
+            max-height: 15rem;
+
+            color: var(--white-text-color);
+
+            overflow-y: hidden;
+        }
+
+            .code__internal-block__code--hidden-text {
+                background-image: linear-gradient(transparent, transparent 75%, var(--hidden-code-background-color) 90%);
+                width: 100%;
+                height: 100%;
+
+                position: absolute;
+
+                transform: translate(-1rem, -1rem);
+            }
+
+    .project {
+        background-color: var(--project-background-color);
+
+        border-radius: 0.5rem;
+    }
+
+        .project__info {
+            padding: 2rem;
+
+            color: var(--white-text-color);
+        }
+
+            .project__info__title {
+                font-size: 1.5rem;
+            }
+
+            .project__info__description {
+                margin-top: 0.5rem;
+
+                color: var(--white-50-text-color);
+            }
+
+            .project__info__data {
+                display: flex;
+                justify-content: space-between;
+
+                margin-top: 1.5rem;
+            }
+
+                .project__info__data__actions {
+                    display: flex;
+                    gap: 1rem;
+                }
+
+                    .project__info__action {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+                .project__info__data__profile {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+
+/*=============== RESPONSIVE LAYOUTS ===============*/
+/* DESKTOP - 1024px */
+@media screen and (min-width: 64rem) {
+    /*============================== PAGE - TOP TO BOTTOM ==============================*/
+    /* HEADER */
+    .header {
+        gap: 2.5rem;
+    }
+
+    .main {
+        grid-column: 2 / -1;
+    }
+
+    /* PROJECTS */
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        margin-top: 0;
+    }
+}

@@ -9,7 +9,11 @@
     <!-- CSS IMPORTS -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/projects.css">
+
+    <!-- JS IMPORTS -->
+    <!-- <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/window-events.js" defer></script> -->
 </head>
 <body>
     <div class="entire-page">
@@ -52,29 +56,139 @@
             </div>
         </header>
 
-        <main>
-            <!-- MENU -->
-            <nav class="desktop menu">
-                <h2 class="menu__title">Menu</h2>
+        <!-- MENU -->
+        <nav class="desktop menu">
+            <h2 class="h2 menu__title">Menu</h2>
 
-                <ul class="menu__links">
-                    <li>
-                        <a class="menu__links__item" href="index.html">
-                            <img src="assets/images/icons/code-disabled.svg" alt="Ilustração de um fechamento de tag indicando código">
-                            Editor de Código
-                        </a>
-                    </li>
-                    <li class="menu__links__item menu__links__item--current">
-                        <img src="assets/images/icons/users-enabled.svg" alt="Ilustração de um grupo de 3 pessoas">
-                        Comunidade
-                    </li>
-                </ul>
-            </nav>
+            <ul class="menu__links">
+                <li>
+                    <a class="menu__links__item" href="index.html">
+                        <img src="assets/images/icons/code-disabled.svg" alt="Ilustração de um fechamento de tag indicando código">
+                        Editor de Código
+                    </a>
+                </li>
+                <li class="menu__links__item menu__links__item--current">
+                    <img src="assets/images/icons/users-enabled.svg" alt="Ilustração de um grupo de 3 pessoas">
+                    Comunidade
+                </li>
+            </ul>
+        </nav>
 
+        <main class="main">
             <!-- PROJECTS -->
-            <section>
-                <article>
+            <section class="projects">
+                <article class="project">
+                    <section class="code__external-block" data-element-id="code-external-block">
+                        <div class="code__internal-block">
+                            <img src="assets/images/mac-buttons.svg" alt="Mac Buttons">
+                            
+                            <div class="code__internal-block__wrapper" data-element-id="code__internal-block">    
+                                <code class="code__internal-block__code">function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}</code>
+                            </div>
 
+                            <div class="code__internal-block__code--hidden-text"></div>
+                        </div>
+                    </section>
+
+                    <header class="project__info">
+                        <h2 class="project__info__title">Título do Projeto</h2>
+                        <p class="project__info__description">Essa é a descrição do meu projeto.</p>
+
+                        <article class="project__info__data">
+                            <div class="project__info__data__actions">
+                                <div class="project__info__action">
+                                    <img src="assets/images/icons/chat-bloon.svg" alt="Chat bloon">
+                                    1
+                                </div>
+
+                                <div class="project__info__action">
+                                    <img src="assets/images/icons/heart.svg" alt="Heart">
+                                    2
+                                </div>
+                            </div>
+
+                            <div class="project__info__data__profile">
+                                <img src="assets/images/header-photo.png" alt="Foto de perfil">
+                                @Harry
+                            </div>
+                        </article>
+                    </header>
+                </article>
+
+                <article class="project">
+                    <section class="code__external-block" data-element-id="code-external-block">
+                        <div class="code__internal-block">
+                            <img src="assets/images/mac-buttons.svg" alt="Mac Buttons">
+                            
+                            <div class="code__internal-block__wrapper" data-element-id="code__internal-block">    
+                                <code class="code__internal-block__code">function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}</code>
+                            </div>
+
+                            <div class="code__internal-block__code--hidden-text"></div>
+                        </div>
+                    </section>
+
+                    <header class="project__info">
+                        <h2 class="project__info__title">Título do Projeto</h2>
+                        <p class="project__info__description">Essa é a descrição do meu projeto.</p>
+
+                        <article class="project__info__data">
+                            <div class="project__info__data__actions">
+                                <div class="project__info__action">
+                                    <img src="assets/images/icons/chat-bloon.svg" alt="Chat bloon">
+                                    1
+                                </div>
+
+                                <div class="project__info__action">
+                                    <img src="assets/images/icons/heart.svg" alt="Heart">
+                                    2
+                                </div>
+                            </div>
+
+                            <div class="project__info__data__profile">
+                                <img src="assets/images/header-photo.png" alt="Foto de perfil">
+                                @Harry
+                            </div>
+                        </article>
+                    </header>
+                </article>
+                
+                <article class="project">
+                    <section class="code__external-block" data-element-id="code-external-block">
+                        <div class="code__internal-block">
+                            <img src="assets/images/mac-buttons.svg" alt="Mac Buttons">
+                            
+                            <div class="code__internal-block__wrapper" data-element-id="code__internal-block">    
+                                <code class="code__internal-block__code">function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}function test() {}</code>
+                            </div>
+
+                            <div class="code__internal-block__code--hidden-text"></div>
+                        </div>
+                    </section>
+
+                    <header class="project__info">
+                        <h2 class="project__info__title">Título do Projeto</h2>
+                        <p class="project__info__description">Essa é a descrição do meu projeto.</p>
+
+                        <article class="project__info__data">
+                            <div class="project__info__data__actions">
+                                <div class="project__info__action">
+                                    <img src="assets/images/icons/chat-bloon.svg" alt="Chat bloon">
+                                    1
+                                </div>
+
+                                <div class="project__info__action">
+                                    <img src="assets/images/icons/heart.svg" alt="Heart">
+                                    2
+                                </div>
+                            </div>
+
+                            <div class="project__info__data__profile">
+                                <img src="assets/images/header-photo.png" alt="Foto de perfil">
+                                @Harry
+                            </div>
+                        </article>
+                    </header>
                 </article>
             </section>
         </main>
