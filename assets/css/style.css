@@ -23,13 +23,15 @@
 /*============================== CONFIGURATIONS ==============================*/
 :root {
     /*=============== COLORS ===============*/
-    --test: #041934;
+    --test: hsl(223, 96%, 65%);
     --cod-gray-color: hsl(0, 0%, 8%);
     --black-color: hsl(0, 0%, 0%);
     --black-24-color: hsla(0, 0%, 0%, 0.24);
     --black-50-color: hsla(0, 0%, 0%, 0.5);
     --silver-color: hsl(0, 0%, 80%);
     --white-color: hsl(0, 0%, 100%);
+    --white-08-color: hsla(0, 0%, 100%, 0.08);
+    --white-16-color: hsla(0, 0%, 100%, 0.16);
     --white-25-color: hsla(0, 0%, 100%, 0.25);
     --white-50-color: hsla(0, 0%, 100%, 0.5);
     --rhino-color: hsl(213, 33%, 26%);
@@ -42,6 +44,7 @@
     --dodge-blue-08-color: hsla(223, 96%, 65%, 0.08);
     --dodge-blue-16-color: hsla(223, 96%, 65%, 0.16);
     --dodge-blue-24-color: hsla(223, 96%, 65%, 0.24);
+    --dodge-blue-64-color: hsla(223, 96%, 65%, 0.64);
     --dodge-blue-72-color: hsla(223, 96%, 65%, 0.72);
 
 
@@ -54,6 +57,12 @@
     --input-text-background-color--hover: var(--fiord-color);
     /*======= PAGE COMPONENTS =======*/
     --header-menu-background-color: var(--rhino-color);
+    --header-profile-background-color--hover: var(--white-08-color);
+    --menu-button-background-color--hover: var(--dodge-blue-08-color);
+    --menu-button-background-color--active: var(--dodge-blue-16-color);
+    --icon-link-button--current: var(--dodge-blue-color);
+    --icon-link-button: var(--dodge-blue-16-color);
+    --icon-link-button--hover: var(--dodge-blue-64-color);
     --code-external-block-background-color: var(--malibu-moderate-color);
     --code-internal-block-background-color: var(--cod-gray-color);
     
@@ -199,10 +208,54 @@ hr {
     overflow: hidden;
 }
 
-/*=============== ACCESSIBILITY ===============*/
+/*=============== RESOURCES ===============*/
 .clickable {
     cursor: pointer;
 }
+
+/*=============== MENU LINKS ===============*/
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+    .menu-links__link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        color: var(--white-50-text-color);
+    }
+
+        .menu-links__link--current {
+            color: var(--white-text-color);
+
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .menu-links__link__icon {
+            background-color: var(--icon-link-button);
+                
+            border-radius: 1rem;
+            padding: 0.75rem;
+
+            transition: 0.2s;
+        }
+    
+            .menu-links__link__icon--current {
+                background-color: var(--icon-link-button--current);
+            }
+
+            .menu-links__link:hover .menu-links__link__icon {
+                background-color: var(--icon-link-button--hover);
+            }
+
+            .menu-links__link:active .menu-links__link__icon {
+                background-color: var(--icon-link-button--current);
+            }
+
 
 /*============================== PAGE - TOP TO BOTTOM ==============================*/
 /* HEADER */
@@ -210,7 +263,7 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.5rem;
 
     position: sticky;
     top: 2rem;
@@ -220,6 +273,7 @@ hr {
 
     .header__search-button {
         margin-left: auto;
+        padding: 0.75rem;
     }
 
         .header__search-button--active {
@@ -243,32 +297,24 @@ hr {
         z-index: 1;
     }
 
-        .header__menu__links,
-        .menu__links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-            .header__menu__links__item,
-            .menu__links__item {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-
-                color: var(--white-50-text-color);
-            }
-            
-                .header__menu__links__item--current,
-                .menu__links__item--current {
-                    color: var(--white-text-color);
-
-                    cursor: default;
-                }
-
         .header__menu--active {
             transform: translateX(-105%);
         }
+
+            .header__menu-button {
+                border-radius: 1rem;
+                padding: 0.75rem;
+
+                transition: 0.2s;
+            }
+
+                .header__menu-button:hover {
+                    background-color: var(--menu-button-background-color--hover);
+                }
+
+                .header__menu-button:focus {
+                    background-color: var(--menu-button-background-color--active);
+                }
         
             .header__menu__profile {
                 display: flex;
@@ -278,7 +324,16 @@ hr {
                 margin-left: auto;
 
                 color: var(--white-text-color);
+                border-radius: 0.5rem;
+                padding: 0.75rem;
+
+                cursor: pointer;
+                transition: 0.2s;
             }
+
+                .header__menu__profile:hover {
+                    background-color: var(--header-profile-background-color--hover);
+                }
 
 /* CODE */
 .code__external-block {
@@ -397,9 +452,18 @@ hr {
             gap: 0.5rem;
 
             margin-left: auto;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
 
             color: var(--white-text-color);
+
+            cursor: pointer;
+            transition: 0.2s;
         }
+
+            .header__profile:hover {
+                background-color: var(--header-profile-background-color--hover);
+            }
 
     /* MENU */
     .menu {
