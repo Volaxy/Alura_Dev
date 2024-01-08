@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Alura Dev</title>
+
+    <!-- CSS IMPORTS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="entire-page">
+        <!-- HEADER -->
+        <header class="header" data-element-id="header">
+            <img src="assets/images/logo.png" alt="Logo do AluraDev" data-hidde-on-search>
+            
+            <img class="mobile header__search-button clickable" src="assets/images/icons/search.svg" alt="Search icon" data-element-id="search-button">
+            
+            <label class="tablet desktop accessibility--hidden-text" for="header__search" data-show-on-search>Busque por algo</label>
+            <input class="tablet desktop input-text header__search" id="header__search" type="text" placeholder="Busque por algo" data-show-on-search>
+            
+            <img class="mobile tablet clickable header__menu-button" src="assets/images/icons/menu.svg" alt="Menu icon" data-element-id="menu-button" data-hidde-on-search>
+
+            <nav class="header__menu" data-element-id="header-menu">
+                <ul class="header__menu__links">
+                    <li>
+                        <a class="header__menu__links__item" href="index.html">
+                            <img src="assets/images/icons/code-disabled.svg" alt="Ilustração de um fechamento de tag indicando código">
+                            Editor de Código
+                        </a>
+                    </li>
+                    <li class="header__menu__links__item header__menu__links__item--current">
+                        <img src="assets/images/icons/users-enabled.svg" alt="Ilustração de um grupo de 3 pessoas">
+                        Comunidade
+                    </li>
+                </ul>
+
+                <hr>
+
+                <div class="header__menu__profile">
+                    <img src="assets/images/header-photo.png" alt="Imagem de perfil de uma pessoa">
+                    Harry
+                </div>
+            </nav>
+
+            <div class="desktop header__profile">
+                <img src="assets/images/header-photo.png" alt="Imagem de perfil de uma pessoa">
+                Harry
+            </div>
+        </header>
+
+        <main>
+            <!-- MENU -->
+            <nav class="desktop menu">
+                <h2 class="menu__title">Menu</h2>
+
+                <ul class="menu__links">
+                    <li>
+                        <a class="menu__links__item" href="index.html">
+                            <img src="assets/images/icons/code-disabled.svg" alt="Ilustração de um fechamento de tag indicando código">
+                            Editor de Código
+                        </a>
+                    </li>
+                    <li class="menu__links__item menu__links__item--current">
+                        <img src="assets/images/icons/users-enabled.svg" alt="Ilustração de um grupo de 3 pessoas">
+                        Comunidade
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- PROJECTS -->
+            <section>
+                <article>
+
+                </article>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

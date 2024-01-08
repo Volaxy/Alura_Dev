@@ -1,0 +1,227 @@
+@import url("style.css");
+
+/*============================== Imports ==================================== */
+
+
+/*============================== Configurations ==============================*/
+:root {
+    /*=============== BACKGROUNDS ===============*/
+    /*======= BUTTONS =======*/
+    --primary-button-background-color: var(--dodge-blue-08-color);
+    --primary-button-background-color--hover: var(--dodge-blue-16-color);
+    --primary-button-background-color--focus: var(--dodge-blue-16-color);
+    --secondary-button-background-color: var(--dodge-blue-color);
+    --secondary-button-background-color--hover: var(--malibu-moderate-color);
+    --secondary-button-background-color--focus: var(--malibu-light-color);
+    /*======= INPUTS =======*/
+    --input-select-background-color: var(--rhino-color);
+    --input-select-background-color--hover: var(--fiord-color);
+
+
+    /*=============== BORDERS ===============*/
+    /*======= BUTTONS =======*/
+    --primary-button-border-color--active: var(--dodge-blue-24-color);
+    --secondary-button-border-color--active: var(--dodge-blue-72-color);
+    /*======= PAGE COMPONENTS =======*/
+    --customization-color-border-color: var(--white-color);
+
+
+    /*=============== TEXT COLORS ===============*/
+    /*======= INPUTS =======*/
+    --input-select-placeholder-text-color: var(--silver-color);
+}
+
+/*============================== GENERIC ELEMENTS ==============================*/
+
+
+/*============================== GENERIC CLASSES ==============================*/
+/*=============== BUTTONS ===============*/
+.button {
+    background-color: transparent;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    text-align: center;
+
+    cursor: pointer;
+    line-height: 1.5rem;
+}
+
+    .primary-button {
+        background-color: var(--primary-button-background-color);
+
+        color: var(--white-text-color);
+
+        transition: 0.2s background-color;
+    }
+
+        .primary-button:hover {
+            background-color: var(--primary-button-background-color--hover);
+        }
+        
+        .primary-button:active {
+            outline: 0.25rem solid var(--primary-button-border-color--active);
+        }
+        
+        .primary-button:focus {
+            background-color: var(--primary-button-background-color--focus);
+            outline: 0.25rem solid var(--primary-button-border-color--active);
+        }
+
+    .secondary-button {
+        background-color: var(--secondary-button-background-color);
+
+        color: var(--black-text-color);
+
+        transition: 0.2s background-color;
+    }
+
+        .secondary-button:hover {
+            background-color: var(--secondary-button-background-color--hover);
+        }
+        
+        .secondary-button:active {
+            outline: 0.25rem solid var(--secondary-button-border-color--active);
+        }
+        
+        .secondary-button:focus {
+            background-color: var(--secondary-button-background-color--focus);
+        }
+
+/*=============== INPUTS ===============*/
+.input-select {
+    background-color: var(--input-select-background-color);
+
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    color: var(--white-text-color);
+
+    cursor: pointer;
+    transition: 0.2s background-color;
+}
+
+    .input-select:hover,
+    .input-select:focus {
+        background-color: var(--input-select-background-color--hover);
+    }
+
+    .input-select::placeholder {
+        color: var(--input-select-placeholder-text-color);
+    }
+
+/*============================== PAGE - TOP TO BOTTOM ==============================*/
+
+
+/*=============== RESPONSIVE LAYOUTS ===============*/
+/* CODE */
+.code {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* YOUR PROJECT */
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+    .project-info__description {
+        resize: none;
+    }
+
+/* CUSTOMIZATION */
+.customization {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+    .customization__color {
+        background-color: transparent;
+
+        width: 100%;
+        height: 4rem;
+
+        border: 1px solid var(--customization-color-border-color);
+        border-radius: 0.5rem;
+        padding: 0.1rem 0.25rem;
+
+        cursor: pointer;
+    }
+
+    .customization__color::-webkit-color-swatch {
+        border-radius: 0.25rem;
+        border: none;
+    }
+
+/*=============== RESPONSIVE LAYOUTS ===============*/
+/* TABLET - 768px */
+@media screen and (min-width: 48rem) {
+    /*============================== PAGE - TOP TO BOTTOM ==============================*/
+    /* CUSTOMIZATION */
+    .customization {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .customization__title {
+        grid-column: 1 / -1;
+    }
+    
+    .customization__color {
+        height: auto;
+    }
+}
+
+/* DESKTOP - 1024px */
+@media screen and (min-width: 64rem) {
+    /*============================== PAGE - TOP TO BOTTOM ==============================*/
+    .main {
+        grid-column: 1 / -1;
+
+        display: grid;
+        grid-template-columns: 20vw 1fr;
+    }
+
+    /* CODE */
+    .code-form {
+        display: grid;
+        grid-template-columns: 1fr 20vw;
+    }
+
+        .code-form__code {
+            margin: 0;
+        }
+
+    /* YOUR PROJECT */
+    .code-form__project {
+        margin-left: 2.5rem;
+    }
+
+        .code-form__project__box {
+            margin: 0;
+        }
+
+    /* CUSTOMIZATION */
+    .customization__language {
+        grid-column: 1 / -1;
+    }
+
+    .customization__color {
+        grid-column: 1 / -1;
+
+        min-height: 3rem;
+    }
+}
