@@ -100,7 +100,7 @@
                                 <img src="assets/images/mac-buttons.svg" alt="Mac Buttons">
                                 
                                 <div class="code__internal-block__wrapper" data-element-id="code__internal-block">
-                                    <code class="code__internal-block__code hljs" contenteditable="true" aria-label="Editor de código">function test() {}</code>
+                                    <code class="code__internal-block__code hljs" id="form-code" contenteditable="true" aria-label="Editor de código" data-element-id="code-form-code">function test() {}</code>
                                 </div>
                             </div>
                         </div>
@@ -117,10 +117,10 @@
                             <h2 class="h2">Seu Projeto</h2>
 
                             <label class="accessibility--hidden-text" for="project-name">Nome do seu projeto</label>
-                            <input class="input-text" id="project-name" type="text" placeholder="Nome do seu Projeto">
+                            <input class="input-text" id="project-name" type="text" placeholder="Nome do seu Projeto" data-element-id="project-name">
                             
                             <label class="accessibility--hidden-text" for="project-description">Descrição do seu projeto</label>
-                            <textarea class="input-text project-info__description" id="project-description" rows="5" placeholder="Descrição do seu Projeto"></textarea>
+                            <textarea class="input-text project-info__description" id="project-description" rows="5" placeholder="Descrição do seu Projeto" data-element-id="project-description"></textarea>
                         </section>
                     </fieldset>
 
@@ -142,7 +142,7 @@
                         </section>
                     </fieldset>
 
-                    <input class="button secondary-button" type="submit" value="Salvar Projeto">
+                    <input class="button secondary-button" type="submit" value="Salvar Projeto" data-element-id="save-project">
                 </div>
             </form>
         </main>

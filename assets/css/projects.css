@@ -170,6 +170,6 @@
             .project:hover .project__info__data {
                 height: fit-content;
 
-                margin-top: 2.5rem;
+                margin-top: 2rem;
             }
 }
