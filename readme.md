@@ -2,10 +2,6 @@
 
 Projeto web para edição e compartilhamento de código no site, com sintaxe *Highlight* de acordo com a linguagem especificada.
 
-<!-- TODO: Make the Gif
-    ![LITTLE_RESUMED_GIF_OF_THE_PROJECT](LOCAL_URL)
--->
-
 <hr>
 
 ## Tecnologias Usadas 🖥
@@ -31,7 +27,11 @@ em seguida, entre na pasta e abra o arquivo ***index.html*** no navegador de sua
 > * Por padrão a linguagem selecionada é o JavaScript
 > * Para aplicar o efeito de highlight depois de digitar é preciso clicar no botão **Visualizar com Hightlight**.
 
+![Codando na parte preta da tela e aplicando o highlight](assets/readme/coding-and-apply-highlight.gif)
+
 * Todos os projetos criado estarão na página **Comunidade**.
+
+![Salvando o projeto e mostrando na página de comunidade](assets/readme/saving-project.gif)
 
 ## Link 🔗
 
